@@ -1,0 +1,32 @@
+server:
+  port: 8081 # Puerto interno (el Gateway lo buscará aquí)
+
+spring:
+  application:
+    name: micro-properties
+  
+  # CONFIGURACIÓN POSTGRESQL
+  datasource:
+    # 'postgres-db' es el nombre del servicio en docker-compose
+    url: jdbc:postgresql://postgres-db:5432/immobili_db
+    username: admin
+    password: password123
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update # Crea las tablas automáticamente (útil en dev)
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # CONFIGURACIÓN ELASTICSEARCH
+  elasticsearch:
+    uris: http://elasticsearch:9200
+    socket-timeout: 10s
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://micro-eureka:8761/eureka/
