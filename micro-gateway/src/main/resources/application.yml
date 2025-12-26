@@ -16,7 +16,7 @@ spring:
         # Regla 1: Tráfico hacia Propiedades
         - id: properties-service
           # lb:// significa "Load Balancer". Busca en Eureka un servicio llamado "MICRO-PROPERTIES"
-          uri: lb://micro-properties
+          uri: lb://MICRO-PROPERTIES
           predicates:
             - Path=/api/v1/properties/**
           # Opcional: Si el microservicio espera /properties y tú envías /api/v1/properties, usas filtros para reescribir.
