@@ -1,12 +1,16 @@
 package com.micro.properties.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor; // <--- NUEVO
 import lombok.Data;
+import lombok.NoArgsConstructor;  // <--- NUEVO
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "properties")
-@Data // Lombok genera Getters, Setters, ToString, etc.
+@Data
+@NoArgsConstructor  // OBLIGATORIO para JPA
+@AllArgsConstructor // Útil
 public class Property {
 
     @Id
@@ -15,10 +19,9 @@ public class Property {
 
     private String title;
     private String location;
-    private String price; // Podría ser BigDecimal, pero por ahora String está bien
-    private String description;
+    private String price;
+    private String description; // Tip: Si el texto es muy largo, a veces necesitas @Column(length=1000)
     
-    // Características básicas
     private int bedrooms;
     private int bathrooms;
     private int stories;
@@ -26,11 +29,9 @@ public class Property {
     @Column(name = "image_url")
     private String img;
 
-    // Relación con Agente (Por ahora solo guardamos el ID para llamar al otro servicio)
     @Column(name = "agent_id")
     private Long agentId;
 
-    // Auditoría
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
