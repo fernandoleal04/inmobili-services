@@ -1,7 +1,7 @@
 package main.java.com.micro.properties.controller;
 
-import com.inmobili.properties.model.Property;
-import com.inmobili.properties.service.PropertyService;
+import main.java.com.micro.properties.model.Property;
+import main.java.com.micro.properties.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

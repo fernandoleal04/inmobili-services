@@ -1,7 +1,7 @@
 package main.java.com.micro.properties.service;
 
-import com.inmobili.properties.model.Property;
-import com.inmobili.properties.repository.PropertyRepository;
+import main.java.com.micro.properties.model.Property;
+import main.java.com.micro.properties.repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

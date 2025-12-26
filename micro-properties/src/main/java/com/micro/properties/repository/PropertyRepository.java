@@ -1,6 +1,6 @@
 package main.java.com.micro.properties.repository;
 
-import com.inmobili.properties.model.Property;
+import main.java.com.micro.properties.model.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
